@@ -1,0 +1,14 @@
+{
+  "name": "nuevopaquete",
+  "version": "1.0.0",
+  "description": "Este es un paquete de node.js para prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Legarda",
+  "license": "ISC",
+  "devDependencies": {
+    "lodash": "^4.17.21"
+  }
+}
