@@ -2,7 +2,7 @@ const express=require('express');
 const { default: mongoose } = require('mongoose');
 const app=express();
 const puerto=3000;
-const userRoutes = require('../routers/UsrPswds');
+const userRoutes = require('../routers/rutPsw.js');
 
 
 mongoose.connect('mongodb://localhost:27017/basedatos').then(
