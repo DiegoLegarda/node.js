@@ -1,10 +1,11 @@
-const express=require('express');
+const express = require('express');
+const app = express();
+const users = require('./routes/users.js');
 const { default: mongoose } = require('mongoose');
-const app=express();
 const puerto=3000;
-const userRoutes = require('../routers/rutPsw.js');
 
 
+/*
 mongoose.connect('mongodb://localhost:27017/basedatos').then(
     ()=>{console.log(`Conectado a la base de datos ${mongoose.connection.db.databaseName}`);
     })
@@ -51,7 +52,7 @@ newMusica.save()
 
 
       // */
-
+/*
       app.post('/usuarios/nuevo', async (req, res) => {
         if (!req.body) {
             return res.status(400).json({ message: 'Datos del usuario no proporcionados' });
@@ -68,7 +69,8 @@ newMusica.save()
     });
     
 
-
+*/
+/*
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 
@@ -102,7 +104,7 @@ app.get('/formulario',(req,res)=>{
     res.sendFile(__dirname+'/public/index.html');
 });
 
-
+*/
 app.get('/',(req,res)=>{
     res.send('Hola Mundo');
 });
