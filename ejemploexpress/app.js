@@ -4,8 +4,18 @@ const users = require('./routes/users.js');
 const { default: mongoose } = require('mongoose');
 const puerto=3000;
 
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
+app.use('/api/user', users);
+//app.use(users);
 
-/*
+
+// Ruta para manejar la solicitud GET a /data
+app.get('/data', (req, res) => {
+  const data = { message: '¡Hola desde el servidor!' };
+  res.json(data);
+});
+
 mongoose.connect('mongodb://localhost:27017/basedatos').then(
     ()=>{console.log(`Conectado a la base de datos ${mongoose.connection.db.databaseName}`);
     })
@@ -13,7 +23,10 @@ mongoose.connect('mongodb://localhost:27017/basedatos').then(
                     console.log(error);
     });
 // Usar las rutas de usuario
-app.use('/api/user', userRoutes);
+
+/*
+*/
+
 /*
 const newMusica = new Musica({ nombre: 'Ejemplo', genero:'pop', anio: 2021});
 newMusica.save()
@@ -70,10 +83,9 @@ newMusica.save()
     
 
 */
-/*
-app.use(express.static('public'));
-app.use(express.urlencoded({extended:true}));
 
+
+/*
 const validarFormulario = (req, res, next) => {
     console.log(req.body);
     const { nombre, apellido, correo } = req.body;
@@ -99,12 +111,12 @@ app.post('/formulario/enviar',validarFormulario,(req,res)=>{
 });
 
 
-
+*/
 app.get('/formulario',(req,res)=>{
-    res.sendFile(__dirname+'/public/index.html');
+    res.sendFile(__dirname+'/public/login.html');
 });
 
-*/
+
 app.get('/',(req,res)=>{
     res.send('Hola Mundo');
 });
